@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       scope '/v1' do
 	    get '/' => 'api_v_one#index'
 		scope '/login' do
-		  post '/' => 'user_token#create'
+		  post 'authenticate' => 'auth#authenticate'
 		end
         scope '/users' do
           post '/' => 'users#create'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 			    get '/' => 'votes#show'
 				put '/' => 'votes#update'
 			  end
-			end  
+			end
           end
         end
       end
